@@ -1,12 +1,12 @@
-# Nexus 5 tether_dun_required fix
+# Nexus 5 hotspot/tethering fix
 
 ui_print(" ");
-ui_print("---------------------------------");
-ui_print(" Nexus 5 tether_dun_required fix ");
-ui_print("            by *child            ");
-ui_print("---------------------------------");
+ui_print("-------------------------------");
+ui_print(" Nexus 5 hotspot/tethering fix ");
+ui_print("           by *child           ");
+ui_print("-------------------------------");
 ui_print(" ");
-ui_print("Nexus 5 tether_dun_required fix v1.0");
+ui_print("Nexus 5 hotspot/tethering fix v1.0");
 ui_print(" ");
 sleep(1);
 
@@ -46,6 +46,6 @@ show_progress(0.1, 0);
 
 ui_print(" ");
 
-ui_print("Nexus 5 tether_dun_required fix SUCCESSFULLY applied!");
+ui_print("Nexus 5 hotspot/tethering fix SUCCESSFULLY applied!");
 sleep(3);
 
