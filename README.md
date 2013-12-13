@@ -1,5 +1,5 @@
-Nexus 5 tether_dun_required fix
-===============================
+Nexus 5 hotspot/tethering fix
+=============================
 
 Here is a Nexus 5 hotspot/tethering flashable fix base on the discovery by [yakman66](http://forum.xda-developers.com/showthread.php?p=47203432#post47203432). All credit should go to **yakman66**.
 
