@@ -1,0 +1,51 @@
+# Nexus 5 tether_dun_required fix
+
+ui_print(" ");
+ui_print("---------------------------------");
+ui_print(" Nexus 5 tether_dun_required fix ");
+ui_print("            by *child            ");
+ui_print("---------------------------------");
+ui_print(" ");
+ui_print("Nexus 5 tether_dun_required fix v1.0");
+ui_print(" ");
+sleep(1);
+
+show_progress(0.1, 0);
+run_program("/sbin/busybox", "mount", "/system");
+run_program("/sbin/busybox", "mount", "/data");
+
+if
+  ( is_substring("hammerhead", file_getprop("/system/build.prop","ro.product.device")) || is_substring("hammerhead", file_getprop("/system/build.prop","ro.build.product")) ) &&
+  ( is_substring("4.4", file_getprop("/system/build.prop","ro.build.version.release")) )
+then
+  ui_print("Nexus 5 4.4+ ROM detected.");
+  ui_print(" ");
+else
+  ui_print("Incompatible device/ROM detected!");
+  ui_print(" ");
+  ui_print("This for Nexus 5 running Android 4.4+ ONLY!");
+  ui_print(" ");
+  ui_print("Installation failed!");
+  ui_print(" ");
+  unmount("/data");
+  unmount("/system");
+  sleep(3);
+  abort("Aborting...");
+endif;
+
+show_progress(0.8, 5);
+ui_print("Installing tether_dun_required fix ...");
+package_extract_file("sqlite3", "/tmp/sqlite3");
+set_perm(0, 0, 0777, "/tmp/sqlite3");
+run_program("/tmp/sqlite3", "/data/data/com.android.providers.settings/databases/settings.db", "INSERT INTO global (name, value) VALUES ('tether_dun_required', 0);");
+delete("/tmp/sqlite3");
+
+unmount("/data");
+unmount("/system");
+show_progress(0.1, 0);
+
+ui_print(" ");
+
+ui_print("Nexus 5 tether_dun_required fix SUCCESSFULLY applied!");
+sleep(3);
+
