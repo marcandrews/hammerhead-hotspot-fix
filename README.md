@@ -10,7 +10,7 @@ Here is a Nexus 5 hotspot/tethering flashable fix base on the discovery by [yakm
 1. Download the installer ZIP to your device, flash from recovery, and reboot.
 
 ## Uninstallation
-Please see the uninstaller branch for more information.
+Please see the [uninstaller branch](https://github.com/marcandrews/hammerhead-hotspot-fix/tree/uninstaller) for more information.
 
 ## Special thanks
 * [yakman66](http://forum.xda-developers.com/showthread.php?p=47203432#post47203432)
