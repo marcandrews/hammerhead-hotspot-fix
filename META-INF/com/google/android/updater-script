@@ -6,7 +6,7 @@ ui_print(" Nexus 5 hotspot/tethering fix ");
 ui_print("           by *child           ");
 ui_print("-------------------------------");
 ui_print(" ");
-ui_print("Nexus 5 hotspot/tethering fix v1.0");
+ui_print("Nexus 5 hotspot/tethering fix v1.0 *UNINSTALLER*");
 ui_print(" ");
 sleep(1);
 
@@ -25,7 +25,7 @@ else
   ui_print(" ");
   ui_print("This for Nexus 5 running Android 4.4+ ONLY!");
   ui_print(" ");
-  ui_print("Installation failed!");
+  ui_print("Uninstallation failed!");
   ui_print(" ");
   unmount("/data");
   unmount("/system");
@@ -37,7 +37,7 @@ show_progress(0.8, 5);
 ui_print("Installing tether_dun_required fix ...");
 package_extract_file("sqlite3", "/tmp/sqlite3");
 set_perm(0, 0, 0777, "/tmp/sqlite3");
-run_program("/tmp/sqlite3", "/data/data/com.android.providers.settings/databases/settings.db", "INSERT INTO global (name, value) VALUES ('tether_dun_required', 0);");
+run_program("/tmp/sqlite3", "/data/data/com.android.providers.settings/databases/settings.db", "DELETE FROM global WHERE name = 'tether_dun_required';");
 delete("/tmp/sqlite3");
 
 unmount("/data");
@@ -46,6 +46,5 @@ show_progress(0.1, 0);
 
 ui_print(" ");
 
-ui_print("Nexus 5 hotspot/tethering fix SUCCESSFULLY applied!");
+ui_print("Nexus 5 hotspot/tethering fix SUCCESSFULLY removed!");
 sleep(3);
-
