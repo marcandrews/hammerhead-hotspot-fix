@@ -15,8 +15,7 @@ run_program("/sbin/busybox", "mount", "/system");
 run_program("/sbin/busybox", "mount", "/data");
 
 if
-  ( is_substring("hammerhead", file_getprop("/system/build.prop","ro.product.device")) || is_substring("hammerhead", file_getprop("/system/build.prop","ro.build.product")) ) &&
-  ( is_substring("4.4", file_getprop("/system/build.prop","ro.build.version.release")) )
+  ( is_substring("hammerhead", file_getprop("/system/build.prop","ro.product.device")) || is_substring("hammerhead", file_getprop("/system/build.prop","ro.build.product")) )
 then
   ui_print("Nexus 5 4.4+ ROM detected.");
   ui_print(" ");
